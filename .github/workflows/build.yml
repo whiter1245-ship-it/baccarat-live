@@ -20,21 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt update
-          sudo apt install -y python3-pip python3
-          pip install --upgrade pip
-          pip install cython
-          pip install buildozer
-
-      - name: Accept Licenses
-        run: yes | buildozer android update
-
-      - name: Build APK
-        run: buildozer android debug
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
+          sudo apt update        with:
           name: apk
           path: bin/*.apk          name: apk
           path: bin/*.apk
